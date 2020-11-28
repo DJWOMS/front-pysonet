@@ -13,3 +13,8 @@ export interface Token {
   refresh: string;
   access: string;
 }
+
+export interface Verify {
+  uid: string;
+  token: string;
+}

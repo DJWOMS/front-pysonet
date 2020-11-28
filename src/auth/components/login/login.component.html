@@ -2,7 +2,7 @@
   <span *ngIf="errorRes">
       {{errorRes}}
   </span>
-  <div class="login-area">
+  <div class="login">
     <input class="single-field" type="text" formControlName="username" placeholder="username">
     <!--    form.get('username').invalid || -->
     <span class="field-error" *ngIf="form.get('username').touched ">
@@ -10,12 +10,12 @@
     </span>
   </div>
 
-  <div class="login-area">
-    <input class="single-field" type="password" formControlName="password" placeholder="pass">
+  <div class="registration">
+    <input class="single-field" type="password" formControlName="password" placeholder="password">
     <span *ngIf="form.get('password').touched">
       Please enter password
     </span>
   </div>
 
-  <button mat-flat-button type="submit" [disabled]="form.invalid">Войти в IT</button>
+  <button class="btn" type="submit" [disabled]="form.invalid">Войти в IT</button>
 </form>

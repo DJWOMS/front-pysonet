@@ -1,24 +1,33 @@
-.brand {
-  color: #333333;
-  font-size: 16px;
-  font-weight: 500;
-  padding-left: 70px;
-}
 
-.login-image {
-  background-color: #dc4734;
-}
+
+/*.login-image {*/
+/*  background-color: #dc4734;*/
+/*}*/
 
 .login-form {
-  display: flex;
+  display: grid;
+  grid-template-areas: 'login registration btn';
 }
 
-.login-area {
+.login {
+  grid-area: login;
   background-color: #dc4734;
   padding: 15px 30px;
 }
 
-.login-area .single-field {
+.registration {
+  grid-area: registration;
+  background-color: #dc4734;
+  padding: 15px 30px;
+}
+
+.btn{
+  grid-area: btn;
+  background-color: #b8b8b8;
+  padding: 15px 30px;
+}
+
+.single-field {
   width: 100%;
   border: none;
   background-color: transparent;

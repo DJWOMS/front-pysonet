@@ -1,0 +1,28 @@
+.create-acc {
+    color: #dc4734;
+    font-size: 30px;
+    font-weight: 800;
+    padding-bottom: 47px;
+}
+
+.single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #999;
+    padding: 5px 10px;
+    margin-bottom: 28px;
+}
+
+.submit-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    padding: 15px 20px;
+    display: block;
+    border: 1px solid transparent;
+    background-color: #dc4734;
+    width: 100%;
+    margin-top: 23px;
+}

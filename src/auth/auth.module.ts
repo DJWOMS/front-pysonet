@@ -9,7 +9,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { VerifyComponent } from './verify/verify.component';
 
 @NgModule({
-  declarations: [LoginComponent, AuthLayoutComponent, RegistrationComponent, LoginLayoutComponent, VerifyComponent],
+  declarations: [
+    LoginComponent,
+    AuthLayoutComponent,
+    RegistrationComponent,
+    LoginLayoutComponent,
+    VerifyComponent
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,

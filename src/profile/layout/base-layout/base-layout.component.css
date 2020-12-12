@@ -1,0 +1,29 @@
+.wrapper {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "left-sidebar content right-sidebar";
+  grid-template-columns: 268px 565px 268px;
+  grid-template-rows: 60px 100%;
+}
+
+header {
+  grid-area: header;
+  border: 1px solid #333333;
+}
+
+.left-sidebar {
+  grid-area: left-sidebar;
+  border: 1px solid #333333;
+}
+
+.content {
+  grid-area: content;
+  border: 1px solid #333333;
+}
+
+.right-sidebar {
+  grid-area: right-sidebar;
+  border: 1px solid #333333;
+}
+

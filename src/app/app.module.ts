@@ -8,7 +8,8 @@ import { ProfileModule } from '../profile/profile.module';
 import { NotfoundComponent } from '../shared/components/notfound/notfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {TokenInterceptService} from '../auth/token-intercept.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import {HttpClientModule} from '@angular/common/http';
     ProfileModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

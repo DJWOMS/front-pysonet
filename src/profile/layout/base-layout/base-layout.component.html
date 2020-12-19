@@ -1,13 +1,25 @@
-<div class="wrapper">
-  <header>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+<section class="wrapper">
+  <header class="header-area">
+    <nav>
+      <ul class="header__menu">
+        <li><a>Home</a></li>
+        <li><a>Link 2</a></li>
+        <li><a>Link 3</a></li>
+      </ul>
+    </nav>
+    <img src="">
+    <div>
+      <input type="text" placeholder="search">
+      <button type="button">S</button>
+    </div>
+    <ul>
+      <img src="">
+    </ul>
   </header>
-  <div class="left-sidebar"></div>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="right-sidebar"></div>
-</div>
+  <section class="main">
+    <aside class="side"></aside>
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

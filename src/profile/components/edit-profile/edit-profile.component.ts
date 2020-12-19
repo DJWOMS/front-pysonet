@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {ProfileService} from '../../services/profile.service';
@@ -8,7 +8,7 @@ import {ProfileService} from '../../services/profile.service';
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css']
 })
-export class EditProfileComponent implements OnInit {
+export class EditProfileComponent implements OnInit, OnDestroy {
   form: FormGroup;
   aSub: Subscription;
   errorRes: object | null = null;
@@ -18,7 +18,9 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // TODO Изменить данные для редактирования на беке.
     this.form = this.fb.group({
+      id: [null],
       username: [null, [Validators.required, Validators.minLength(8)]],
       first_name: [null, [Validators.required]],
       last_name: [null, [Validators.required]],
@@ -30,6 +32,14 @@ export class EditProfileComponent implements OnInit {
       gender: [null],
       technology: this.fb.array([1]), // this.fb.array([null, [Validators.required]]),
     });
+    this.getInfoProfile();
+  }
+
+  getInfoProfile(): void {
+    this.aSub = this.profileService.get_single(1).subscribe(
+      res => this.form.setValue(res),
+      error => console.log(error)
+    );
   }
 
   submit(): void {
@@ -37,5 +47,11 @@ export class EditProfileComponent implements OnInit {
       res => alert('Save'),
       error => console.log(error.error)
     );
+  }
+
+  ngOnDestroy(): void {
+    if (this.aSub) {
+      this.aSub.unsubscribe();
+    }
   }
 }

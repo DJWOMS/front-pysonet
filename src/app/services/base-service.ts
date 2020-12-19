@@ -18,8 +18,8 @@ export class BaseService<T> {
     return this.http.get<[T]>(`${environment.url}/${this.url}/`, {params: params});
   }
 
-  get_list(params?: HttpParams): Observable<[T]> {
-    return this.http.get<[T]>(`${environment.url}/${this.url}/list/`, {params: params});
+  get_list(id: number, params?: HttpParams): Observable<[T]> {
+    return this.http.get<[T]>(`${environment.url}/${this.url}/${id}`, {params: params});
   }
 
   get_single(id: number): Observable<T> {

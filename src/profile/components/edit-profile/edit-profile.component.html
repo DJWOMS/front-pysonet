@@ -1,13 +1,16 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <input type="text" formControlName="username">
-  <input type="text" formControlName="first_name">
-  <input type="text" formControlName="last_name">
-  <input type="text" formControlName="middle_name">
-  <input type="text" formControlName="phone">
-  <input type="text" formControlName="bio">
-  <input type="text" formControlName="github">
-  <input type="text" formControlName="birthday" placeholder="birthday">
-  <input type="text" formControlName="gender" placeholder="gender">
-<!--  <input type="text" formControlName="technology">-->
-  <button class="submit-btn" type="submit" [disabled]="form.invalid">Обновить</button>
-</form>
+<section class="edit_profile">
+  <h3 class="title">Edit profile</h3>
+  <form class="edit_profile_form" [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" formControlName="username" placeholder="username">
+    <input type="text" formControlName="first_name" placeholder="first_name">
+    <input type="text" formControlName="last_name" placeholder="last_name">
+    <input type="text" formControlName="middle_name" placeholder="middle_name">
+    <input type="text" formControlName="phone" placeholder="phone">
+    <input type="text" formControlName="bio" placeholder="bio">
+    <input type="text" formControlName="github" placeholder="github">
+    <input type="text" formControlName="birthday" placeholder="birthday">
+    <input type="text" formControlName="gender" placeholder="gender">
+    <input type="text" formControlName="technology">
+    <button class="submit-btn" type="submit" [disabled]="form.invalid">Обновить</button>
+  </form>
+</section>

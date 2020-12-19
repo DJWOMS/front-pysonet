@@ -1,2 +1,8 @@
-
+<section *ngFor="let post of postList; let i = index">
+  <small>{{post.user}}</small>
+  <p>{{post.text}}</p>
+  <small>{{post.create_date}}</small><br>
+  <small>{{post.comments_count}}</small>
+  <hr>
+</section>
 

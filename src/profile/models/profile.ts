@@ -12,7 +12,6 @@ export class EditProfile {
 }
 
 export class Profile extends EditProfile{
-  id?: number;
   avatar: string;
   email: string;
   date_joined: string;
